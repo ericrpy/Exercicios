@@ -1,0 +1,30 @@
+import pandas as pd
+
+# carregar dados
+df = pd.read_csv("C:\\Users\\erirodrigues\\Desktop\\dados_ciencia_robusto.csv")
+
+# visualizar as primeiras linhas
+print(df.head())
+
+salario_por_depto = df.groupby('Departamento')['Salario'].agg(['sum', 'mean'])
+print(round(salario_por_depto,2))
+
+# media de idade por gênero
+media_idade_genero = df.groupby('Genero')['Idade'].mean()
+print(round(media_idade_genero,0))
+
+# Número de Funcionários por Departamento
+funcionarios_por_depto = df['Departamento'].value_counts()
+print(funcionarios_por_depto)
+
+# Correlação entre Anos de Experiência e Salário
+correlacao = df['Anos_Experiencia'].corr(df['Salario'])
+print(f"Correlação entre Anos de Experiência e Salário: {correlacao}")
+
+# Funcionários com Salário Acima de 10.000
+salario_alto = df[df['Salario'] > 10000]
+print(salario_alto)
+
+# Funcionários do Departamento de TI com Mais de 5 Anos de Experiência
+ti_experientes = df[(df['Departamento'] == 'TI') & (df['Anos_Experiencia'] > 5)]
+print(ti_experientes)

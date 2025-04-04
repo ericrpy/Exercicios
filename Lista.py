@@ -1,4 +1,6 @@
 # criando a lista
+#        1   1   2   3   4   5
+#       -6   -5  -4  -3  -2  -1
 lista = [10, 20, 30, 40, 50, 60]
 
 # alterando o índice 2
@@ -22,3 +24,5 @@ lista.append('BBB')
 
 print(lista)
 
+# inserindo o valor 5 no índice 0
+lista.insert(0, 5)

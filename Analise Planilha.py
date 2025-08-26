@@ -4,7 +4,7 @@ df = pd.read_csv("C:\\Users\\erirodrigues\\Desktop\\dados_ciencia_robusto.csv")
 
 # print(df.head())
 
-# rint(df['Departamento'])
+# print(df['Departamento'])
 
 contagem_ti = df["Departamento"].astype(str).str.contains("TI", case=False, na=False).sum()
 print(f"Número de ocorrências de 'TI' na coluna 'Departamento': {contagem_ti}")

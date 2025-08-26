@@ -10,3 +10,6 @@ except ZeroDivisionError: # trata apenas o erro ZeroDivisionError
 
 except Exception: # trata qualquer tipo de erro
     print('Erro desconhecido')
+
+finally: # sempre será executado
+    print('FINALIZANDO')
